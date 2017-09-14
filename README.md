@@ -183,8 +183,7 @@ Here the test case named `FactorialTest` contains the two tests
 `HandlesZeroInput` and `HandlesPositiveInput`.
 
 Google Test groups the test results by test cases, so logically-related tests
-should be in the same test case; in other words, the first argument to their
-`TEST()` should be the same.
+should be in the same test case.
 
 ## Google Mock: Example Turtle Graphics
 
