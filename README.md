@@ -165,12 +165,10 @@ might look like
 
 
 ```Cpp
-// Tests factorial of 0.
 TEST(FactorialTest, HandlesZeroInput) {
   EXPECT_EQ(1, Factorial(0));
 }
 
-// Tests factorial of positive numbers.
 TEST(FactorialTest, HandlesPositiveInput) {
   EXPECT_EQ(1, Factorial(1));
   EXPECT_EQ(2, Factorial(2));
@@ -182,8 +180,8 @@ TEST(FactorialTest, HandlesPositiveInput) {
 Here the test case named `FactorialTest` contains the two tests
 `HandlesZeroInput` and `HandlesPositiveInput`.
 
-Google Test groups the test results by test cases, so logically-related tests
-should be in the same test case.
+Test results are grouped by by test cases, so logically-related tests should be
+in the same test case.
 
 ## Google Mock: Example Turtle Graphics
 
