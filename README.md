@@ -13,7 +13,8 @@ We start by giving a short explanation of the terminology used in Google Test.
 Is a formal name, analogous with a [stunt
 double](https://en.wikipedia.org/wiki/Stunt_double). It is a generic term for any kind of pretend object used in place of a real object during testing.
 
-IMHO, the name is misleading; the word "double" refers to the "other" (mocked) entity, not a pair of entities.
+The name might be misleading; note that the word "double" here refers to the
+"other" (mocked) entity, not a pair of entities.
 
 These are defined in Gerard Meszaros's book and used by, for instance, Martin Fowler and Uncle Bob:
 
