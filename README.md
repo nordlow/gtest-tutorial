@@ -148,7 +148,9 @@ ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
 ```
 
 Values of left-hand and right-hand side expressions are printed upon assertion
-failure. How cleverly are, for instance, containers (with many elements)
+failure.
+
+*Question*: How cleverly are, for instance, containers (with many elements)
 printed?
 
 ## Google Mock: Example Turtle Graphics
@@ -195,6 +197,14 @@ public: // mocks must be public
   correctly) automate this stage.
 - If you're lazy and optimistic you can use `scripts/gen-erator/gmock_gen.py`.
 - Mocks should be defined in separate files, that is `MockTurtle` should be placed in `mock_turtle.h`.
+
+## Using Mocks
+
+1. Import
+2. Create mock objects
+3. Set expectations on behaviour
+4. Exercise code
+5. Upon destruction, expections are checked
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
