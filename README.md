@@ -41,6 +41,8 @@ public class DummyAuthorizer implements Authorizer {
 
 - Only mimics interface
 - Only constructed but not used
+- Return value is here designed to give error upon use
+  (`NullPointerException` in Java)
 
 ### *stub*: a kind of *dummy*
 
