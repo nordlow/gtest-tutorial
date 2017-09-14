@@ -204,7 +204,33 @@ public: // mocks must be public
 2. Create mock objects
 3. Set expectations on behaviour
 4. Exercise code
-5. Upon destruction, expections are checked
+5. Upon destruction, expectations are checked
+
+For instance:
+
+```Cpp
+#include "path/to/mock-turtle.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
+using ::testing::AtLeast;                     // #1
+
+TEST(PainterTest, CanDrawSomething) {
+  MockTurtle turtle;                          // #2
+  EXPECT_CALL(turtle, PenDown())              // #3
+      .Times(AtLeast(1));
+
+  Painter painter(&turtle);                   // #4
+
+  EXPECT_TRUE(painter.DrawCircle(0, 0, 10));
+}                                             // #5
+
+int main(int argc, char** argv) {
+  // The following line must be executed to initialize Google Mock
+  // (and Google Test) before running the tests.
+  ::testing::InitGoogleMock(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+```
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
@@ -212,7 +238,6 @@ public: // mocks must be public
   - 100 % correct Cpp parsing
   - fully automated mock generation
 - used in Gripen software verification
-- written by Joakim Brännström
 
 ## Reads (in order of importance)
 - [The Little Mocker](https://8thlight.com/blog/uncle-bob/2014/05/14/TheLittleMocker.html)
