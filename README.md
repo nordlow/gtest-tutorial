@@ -135,12 +135,10 @@ public class AcceptingAuthorizerFake implements Authorizer {
 
 ### Large tests (acceptance tests)
 
-## Google test
+## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
 
-### [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
-
-- Fatal failure: `ASSERT_[TRUE,FALSE,EQ,NE,LT,LE,GT,GE]`
-- Non-fatal failure: `EXPECT_[TRUE,FALSE,EQ,NE,LT,LE,GT,GE]`
+- Fatal failure: `ASSERT_[TRUE,FALSE,EQ,NE,LT,LE,GT,GE, STREQ,STRNE]`
+- Non-fatal failure: `EXPECT_[TRUE,FALSE,EQ,NE,LT,LE,GT,GE, STRCASEEQ,STRCASENE]`
 - Sample:
 
 ```Cpp
@@ -152,6 +150,33 @@ failure.
 
 *Question*: How cleverly are, for instance, containers (with many elements)
 printed?
+
+## Defining a simple test
+
+Arguments to `TEST` should be valid C++ symbols without underscore.
+
+For instance, a test case for
+
+```Cpp
+int Factorial(int n); // Returns the factorial of n
+```
+
+might look like
+
+```Cpp
+// Tests factorial of 0.
+TEST(FactorialTest, HandlesZeroInput) {
+  EXPECT_EQ(1, Factorial(0));
+}
+
+// Tests factorial of positive numbers.
+TEST(FactorialTest, HandlesPositiveInput) {
+  EXPECT_EQ(1, Factorial(1));
+  EXPECT_EQ(2, Factorial(2));
+  EXPECT_EQ(6, Factorial(3));
+  EXPECT_EQ(40320, Factorial(8));
+}
+```
 
 ## Google Mock: Example Turtle Graphics
 
