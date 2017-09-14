@@ -180,7 +180,7 @@ TEST(FactorialTest, HandlesPositiveInput) {
 Here the test case named `FactorialTest` contains the two tests
 `HandlesZeroInput` and `HandlesPositiveInput`.
 
-Test results are grouped by by test cases, so logically-related tests should be
+Test results are grouped by test cases, so logically-related tests should be
 in the same test case.
 
 ## Google Mock: Example Turtle Graphics
