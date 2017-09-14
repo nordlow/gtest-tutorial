@@ -163,6 +163,7 @@ int Factorial(int n); // Returns the factorial of n
 
 might look like
 
+
 ```Cpp
 // Tests factorial of 0.
 TEST(FactorialTest, HandlesZeroInput) {
@@ -177,6 +178,13 @@ TEST(FactorialTest, HandlesPositiveInput) {
   EXPECT_EQ(40320, Factorial(8));
 }
 ```
+
+Here the test case named `FactorialTest` contains the two tests
+`HandlesZeroInput` and `HandlesPositiveInput`.
+
+Google Test groups the test results by test cases, so logically-related tests
+should be in the same test case; in other words, the first argument to their
+`TEST()` should be the same.
 
 ## Google Mock: Example Turtle Graphics
 
