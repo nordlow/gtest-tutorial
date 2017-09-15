@@ -186,6 +186,70 @@ Here the test case named `FactorialTest` contains the two tests
 Test results are grouped by test cases, so logically-related tests should be
 in the same test case.
 
+## Using test fixtures
+
+Tests for
+
+```Cpp
+template <typename E> // E is the element type.
+class Queue {
+ public:
+  Queue();
+  void Enqueue(const E& element);
+  E* Dequeue(); // Returns NULL if the queue is empty.
+  size_t size() const;
+  ...
+};
+```
+
+needs a fixture class
+
+```Cpp
+class QueueTest : public ::testing::Test {
+ protected:
+  virtual void SetUp() {
+    q1_.Enqueue(1);
+    q2_.Enqueue(2);
+    q2_.Enqueue(3);
+  }
+
+  // virtual void TearDown() {}
+
+  Queue<int> q0_;
+  Queue<int> q1_;
+  Queue<int> q2_;
+};
+```
+
+and to test it
+
+```Cpp
+TEST_F(QueueTest, IsEmptyInitially) {
+  EXPECT_EQ(0, q0_.size());
+}
+
+TEST_F(QueueTest, DequeueWorks) {
+  int* n = q0_.Dequeue();
+  EXPECT_EQ(NULL, n);
+
+  n = q1_.Dequeue();
+  ASSERT_TRUE(n != NULL);
+  EXPECT_EQ(1, *n);
+  EXPECT_EQ(0, q1_.size());
+  delete n;
+
+  n = q2_.Dequeue();
+  ASSERT_TRUE(n != NULL);
+  EXPECT_EQ(2, *n);
+  EXPECT_EQ(1, q2_.size());
+  delete n;
+}
+```
+
+Use `EXPECT_*` when you want the test to continue to reveal more errors after the
+assertion failure, and use `ASSERT_*` when continuing after failure doesn't make
+sense.
+
 ## Google Mock: Example Turtle Graphics
 
 ```Cpp
