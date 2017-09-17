@@ -344,7 +344,7 @@ int main(int argc, char** argv) {
 ## Convert this document to HTML on Ubuntu via
 
 ```Shell
-cat gtest-lecture.md | pandoc -s -f markdown_github > /tmp/foo.html; google-chrome /tmp/foo.html
+TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md && $BROWSER $TMP
 ```
 
 ## Various
