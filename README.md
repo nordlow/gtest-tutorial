@@ -406,13 +406,11 @@ EXPECT_CALL(turtle, GetX())
     .WillRepeatedly(Return(200)); // return 200 the remaining times
 ```
 
-If you don't care about parameter values use underscore as
+If you don't care about parameter values use underscore as in
 
 ```D
 using ::testing::_;
-...
-// Expects the turtle to move forward.
-EXPECT_CALL(turtle, Forward(_));
+EXPECT_CALL(turtle, Forward(_)); // turtle moved forward
 ```
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
