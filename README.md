@@ -252,17 +252,9 @@ sense.
 
 ## Running the tests
 
-- `TEST()` and `TEST_F()` automatically register themselves for execution during
-`RUN_ALL_TESTS()`.
-- `RUN_ALL_TESTS()` runs all tests in the current link unit, and returns 0 upon
-success, 1 otherwise.
-- GCC forces return value of `RUN_ALL_TESTS` to be handle (not ignored)
-- `RUN_ALL_TESTS` shall only be called *once*!
-
-## Typical main function
+The typical C/C++ `main()` function looks like
 
 ```Cpp
-
 // tests and fixtures ...
 
 int main(int argc, char **argv) {
@@ -270,6 +262,13 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 ```
+
+- `TEST()` and `TEST_F()` automatically register themselves for execution, which
+then happens during `RUN_ALL_TESTS()`.
+- `RUN_ALL_TESTS()` runs all tests in the current link unit, and returns 0 upon
+success, 1 otherwise.
+- GCC forces return value of `RUN_ALL_TESTS` to be handle (not ignored)
+- `RUN_ALL_TESTS` shall only be called *once*!
 
 ## Google Mock: Example Turtle Graphics
 
