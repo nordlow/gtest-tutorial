@@ -438,7 +438,15 @@ The `cardinality` parameter to `.Times()` can be either
 - `Between(m, n)`
 - `Exactly(n)` or just `n`
 
-**Important!**: If you omit `Times()`, Google Mock will infer the cardinality for you.
+**Important!**: If you omit `Times()`, Google Mock will infer the cardinality
+for you according to these rules:
+
+- If neither `WillOnce()` nor `WillRepeatedly()` is in the `EXPECT_CALL()`, the
+  inferred cardinality is `Times(1)`.
+- If there are n `WillOnce()`'s but no `WillRepeatedly()`, where n >= 1, the cardinality is `Times(n)`.
+- If there are n `WillOnce()`'s and one `WillRepeatedly()`, where n >= 0, the cardinality is `Times(AtLeast(n))`.
+
+**Question!**: Why is there no `WillN()`?
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
