@@ -410,11 +410,17 @@ If you don't care about parameter values use underscore as in
 
 ```D
 using ::testing::_;
-EXPECT_CALL(turtle, Forward(_)); // turtle moved forward
+EXPECT_CALL(turtle, Forward(_)); // turtle moved forward by some arbitrary step
 ```
 
-The underscore `_`  here is called a *matcher* (compare with Erlang). [Here's a list of them](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
+The underscore `_`  here is called a *matcher* (compare with Erlang). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers) a list of all the others.
 
+For instance, the `Ge` matcher can be used here as
+
+```D
+using ::testing::Ge;
+EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
+```
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
