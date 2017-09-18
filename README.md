@@ -385,6 +385,27 @@ int main(int argc, char** argv) {
 
 Balance between setting too strict and too loose expectations.
 
+EXPECT_CALL() sets an expectation on a mock method:
+
+```D
+EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot because of limitations in C++
+    .Times(cardinality)
+    .WillOnce(action)
+    .WillRepeatedly(action);
+```
+
+More specifically
+
+```D
+using ::testing::Return;
+...
+EXPECT_CALL(turtle, GetX())
+    .Times(5)
+    .WillOnce(Return(100))
+    .WillOnce(Return(150))
+    .WillRepeatedly(Return(200));
+```
+
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
