@@ -366,7 +366,7 @@ The line is clickable in Emacs and other tools that recognize GNU style messages
 
 **Interesting Fact!**: `EXPECT_CALL()` (opposite to assertions) enables Google
 Mock to report a violation as soon as it happens, with context (stack trace,
-etc) still being intact.
+etc) still being intact. This makes debugging much easier.
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
