@@ -434,7 +434,7 @@ expected *not* to be called. Cardinality can be either
 - `AtLeast(n)`
 - `AtMost(n)`
 - `Between(m, n)`
-- `Exactly(m)` or just `n`
+- `Exactly(n)` or just `n`
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
