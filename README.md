@@ -203,7 +203,7 @@ class Queue {
 };
 ```
 
-needs a fixture class
+can use the fixture class
 
 ```Cpp
 class QueueTest : public ::testing::Test {
@@ -412,6 +412,9 @@ If you don't care about parameter values use underscore as in
 using ::testing::_;
 EXPECT_CALL(turtle, Forward(_)); // turtle moved forward
 ```
+
+The underscore `_`  here is called a *matcher* (compare with Erlang). [Here's a list of them](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
+
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
