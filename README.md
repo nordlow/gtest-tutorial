@@ -389,6 +389,7 @@ Balance between setting too strict and too loose expectations.
 domain-specific language:
 
 ```D
+...
 EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot because of limitations in C++
     .Times(cardinality)
     .WillOnce(action)
@@ -414,6 +415,7 @@ If you don't care about exact parameter values use
 
 ```D
 using ::testing::_;
+...
 EXPECT_CALL(turtle, Forward(_)); // turtle moved forward by some arbitrary step
 ```
 
@@ -425,6 +427,7 @@ For instance, the `Ge` matcher can be used here as
 
 ```D
 using ::testing::Ge;
+...
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
 ```
 
@@ -462,6 +465,8 @@ EXPECT_CALL(turtle, GetY())
 .Times(4)
 .WillOnce(Return(100));
 ```
+
+GetY is
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
