@@ -406,14 +406,16 @@ EXPECT_CALL(turtle, GetX())
     .WillRepeatedly(Return(200)); // return 200 the remaining times
 ```
 
-If you don't care about parameter values use underscore as in
+If you don't care about exact parameter values use
 
 ```D
 using ::testing::_;
 EXPECT_CALL(turtle, Forward(_)); // turtle moved forward by some arbitrary step
 ```
 
-The underscore `_`  here is called a *matcher* (compare with Erlang). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers) a list of all the others.
+The underscore `_` here is called a *matcher* (compare with
+Erlang). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
+a list of all the others.
 
 For instance, the `Ge` matcher can be used here as
 
