@@ -453,6 +453,16 @@ Compare this to a regexp `x? y? ... y*`.
 **Important!**: If you want side-effects in expectations be careful because
 evaluation order maybe not be what you expect.
 
+Time for another quiz! What does this mean?:
+
+```D
+using ::testing::Return;
+...
+EXPECT_CALL(turtle, GetY())
+.Times(4)
+.WillOnce(Return(100));
+```
+
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
