@@ -428,8 +428,8 @@ using ::testing::Ge;
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
 ```
 
-The `cardinality` can be zero, in the case when a member is
-expected *not* to be called.
+The `cardinality` can be zero, in the case when a member is expected *not* to be
+called.
 
 The `cardinality` parameter to `.Times()` can be either
 
