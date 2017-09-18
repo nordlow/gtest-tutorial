@@ -99,7 +99,8 @@ public class AcceptingAuthorizerVerificationMock implements Authorizer {
 }
 ```
 
-- Mocks always verifies *behaviour*
+- Mocks always verifies *behaviour*, that is which functions are called (in which
+  order)
 - Less interested in the return values of functions
 - More interested in which function was called, with what arguments, when, and how often
 - Used by **mocking tools**
@@ -348,6 +349,18 @@ int main(int argc, char** argv) {
   return RUN_ALL_TESTS();
 }
 ```
+
+If the painter object didn't call this method, your test will fail with a
+message like this:
+
+```
+path/to/my_test.cc:119: Failure
+Actual function call count doesn't match this expectation:
+Actually: never called;
+Expected: called at least once.
+```
+
+The line is clickable in Emacs and other tools that recognize GNU style messages.
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
