@@ -429,7 +429,12 @@ EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 step
 ```
 
 Further note that the cardinality can be zero, in the case when a member is
-expected *not* to be called.
+expected *not* to be called. Cardinality can be either
+
+- `AtLeast(n)`
+- `AtMost(n)`
+- `Between(m, n)`
+- `Exactly(m)` or just `n`
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
