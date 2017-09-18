@@ -358,7 +358,7 @@ int main(int argc, char** argv) {
 
 ## Reads (in order of importance)
 - [The Little Mocker](https://8thlight.com/blog/uncle-bob/2014/05/14/TheLittleMocker.html)
-- [Google test](https://en.wikipedia.org/wiki/Google_Test)
+- [Google test on Wikipedia](https://en.wikipedia.org/wiki/Google_Test)
 - [Google test Primer](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md)
 
 ## Convert this document to HTML on Ubuntu via
