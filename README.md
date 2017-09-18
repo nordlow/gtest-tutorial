@@ -362,6 +362,12 @@ Expected: called at least once.
 
 The line is clickable in Emacs and other tools that recognize GNU style messages.
 
+**Important!**: Final verification happens in destructors of mock objects => use heap leak checker in test.
+
+**Interesting Fact!**: `EXPECT_CALL()` (opposite to assertions) enables Google
+Mock to report a violation as soon as it happens, with context (stack trace,
+etc) still being intact.
+
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
