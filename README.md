@@ -428,6 +428,9 @@ using ::testing::Ge;
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
 ```
 
+Further note that the cardinality can be zero, in the case a member is expected
+*not* to be called.
+
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
