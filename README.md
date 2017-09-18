@@ -250,6 +250,16 @@ Use `EXPECT_*` when you want the test to continue to reveal more errors after th
 assertion failure, and use `ASSERT_*` when continuing after failure doesn't make
 sense.
 
+## Running the tests
+
+- `TEST()` and `TEST_F()` automatically register themselves for execution during
+`RUN_ALL_TESTS()`.
+- `RUN_ALL_TESTS()` runs all tests in the current link unit, and returns 0 upon
+success, 1 otherwise.
+- GCC forces return value of `RUN_ALL_TESTS` to be handle (not ignored)
+- `RUN_ALL_TESTS` shall only be called *once*!
+
+
 ## Google Mock: Example Turtle Graphics
 
 ```Cpp
