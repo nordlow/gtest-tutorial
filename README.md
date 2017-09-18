@@ -447,6 +447,7 @@ expected *not* to be called. Cardinality can be either
 - [The Little Mocker](https://8thlight.com/blog/uncle-bob/2014/05/14/TheLittleMocker.html)
 - [Google test on Wikipedia](https://en.wikipedia.org/wiki/Google_Test)
 - [Google test Primer](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md)
+- [Google Mock Cheat Sheet](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md)
 
 ## Convert this document to HTML on Ubuntu via
 
