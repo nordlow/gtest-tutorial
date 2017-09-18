@@ -429,12 +429,15 @@ EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 step
 ```
 
 Further note that the cardinality can be zero, in the case when a member is
-expected *not* to be called. Cardinality can be either
+expected *not* to be called. The `cardinality` parameter to `.Times()` can be
+either
 
 - `AtLeast(n)`
 - `AtMost(n)`
 - `Between(m, n)`
 - `Exactly(n)` or just `n`
+
+**Important!**: If you omit `Times()`, Google Mock will infer the cardinality for you.
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
