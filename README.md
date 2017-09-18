@@ -82,7 +82,7 @@ public class AcceptingAuthorizerSpy implements Authorizer {
 
 Sometimes used in an informal way to refer to the whole family of objects that are used in tests.
 
-Sample implementation:
+Simples sample implementation:
 
 ```Java
 public class AcceptingAuthorizerVerificationMock implements Authorizer {
