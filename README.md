@@ -395,6 +395,9 @@ EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot 
     .WillRepeatedly(action);
 ```
 
+enabling more compact specifications (and automatic error diagnostics) compared
+to writing the cardinality loop ourselves.
+
 More specifically
 
 ```D
