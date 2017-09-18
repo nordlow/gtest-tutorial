@@ -413,8 +413,8 @@ using ::testing::_;
 EXPECT_CALL(turtle, Forward(_)); // turtle moved forward by some arbitrary step
 ```
 
-The underscore `_` here is called a *matcher* (as in
-Erlang). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
+The underscore `_` here is called a *matcher* (as in Erlang's pattern
+matching). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
 a list of all the others.
 
 For instance, the `Ge` matcher can be used here as
