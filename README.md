@@ -400,11 +400,13 @@ More specifically
 using ::testing::Return;
 ...
 EXPECT_CALL(turtle, GetX())
-    .Times(5)
-    .WillOnce(Return(100))
-    .WillOnce(Return(150))
-    .WillRepeatedly(Return(200));
+    .Times(5)                     // called 5 times
+    .WillOnce(Return(100))        // return 100 first time,
+    .WillOnce(Return(150))        // return 150 second time
+    .WillRepeatedly(Return(200)); // return 200 the remaining times
 ```
+
+If you don't care about
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
