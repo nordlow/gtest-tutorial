@@ -368,6 +368,19 @@ The line is clickable in Emacs and other tools that recognize GNU style messages
 Mock to report a violation as soon as it happens, with context (stack trace,
 etc) still being intact. This makes debugging much easier.
 
+## Using Google Mock with Any Testing Framework
+
+```D
+int main(int argc, char** argv) {
+  // The following line causes Google Mock to throw an exception on failure,
+  // which will be interpreted by your testing framework as a test failure.
+
+  ::testing::GTEST_FLAG(throw_on_failure) = true;
+  ::testing::InitGoogleMock(&argc, argv);
+  ... whatever your testing framework requires ...
+}
+```
+
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
