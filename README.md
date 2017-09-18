@@ -385,7 +385,7 @@ int main(int argc, char** argv) {
 
 Balance between setting too strict and too loose expectations.
 
-EXPECT_CALL() sets an expectation on a mock method using a *declarative*
+`EXPECT_CALL()` sets an expectation on a mock method using a *declarative*
 domain-specific language:
 
 ```D
@@ -398,7 +398,7 @@ EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot 
 enabling more compact specifications (and automatic error diagnostics) compared
 to writing the cardinality loop ourselves.
 
-More specifically
+For instance,
 
 ```D
 using ::testing::Return;
