@@ -466,7 +466,10 @@ EXPECT_CALL(turtle, GetY())
 .WillOnce(Return(100));
 ```
 
-GetY is
+It expectes `GetY` to return 100 first time and 0 (default) the remaining three
+times.
+
+## Multiple Expectations
 
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
