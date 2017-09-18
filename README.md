@@ -381,6 +381,10 @@ int main(int argc, char** argv) {
 }
 ```
 
+## Setting expectations
+
+Balance between setting too strict and too loose expectations.
+
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
