@@ -450,6 +450,9 @@ Compare this to a regexp `x? y? ... y*`.
 
 **Question!**: Why is there no `WillN()`?
 
+**Important!**: If you want side-effects in expectations be careful because
+evaluation order maybe not be what you expect.
+
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
