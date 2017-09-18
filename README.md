@@ -259,6 +259,17 @@ success, 1 otherwise.
 - GCC forces return value of `RUN_ALL_TESTS` to be handle (not ignored)
 - `RUN_ALL_TESTS` shall only be called *once*!
 
+## Typical main function
+
+```Cpp
+
+// tests and fixtures ...
+
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+```
 
 ## Google Mock: Example Turtle Graphics
 
