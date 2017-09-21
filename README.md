@@ -606,7 +606,7 @@ using ::testing::InSequence;
 TEST(FooTest, DrawsLineSegment) {
   ...
   {
-    InSequence dummy;
+    InSequence dummy; // a bit too implicit for my taste..
 
     EXPECT_CALL(turtle, PenDown());
     EXPECT_CALL(turtle, Forward(100));
