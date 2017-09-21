@@ -190,6 +190,7 @@ differ).
 ### Exit assertions
 
 - `ASSERT_EXIT`: assert that a function calls `exit` with a specific exit code
+  and with specific print to `stdout`
 
 For instance:
 
