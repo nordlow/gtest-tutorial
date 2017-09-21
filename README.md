@@ -197,11 +197,17 @@ TEST(FactorialTest, HandlesPositiveInput) {
 }
 ```
 
-Here, the test case named `FactorialTest` contains the two tests
-`HandlesZeroInput` and `HandlesPositiveInput`.
+Here,
+
+- the **test case** named `FactorialTest` contains
+- the two **tests** named `HandlesZeroInput` and `HandlesPositiveInput`.
 
 Test results are grouped by test cases, so logically-related tests should be
 in the same test case.
+
+Test can be disabled by prefixing symbol of either the test case or the test
+with `_DISABLE`. A warning will be printed at the end of the test execution if
+there are any disabled tests.
 
 ---
 ## Using test fixtures
