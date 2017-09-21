@@ -534,7 +534,7 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 ---
 ## Various
 
-- Install Google Test on Ubuntu via the command
+- Install Google Test on Ubuntu 17.04 via the command
 
 ```Shell
 sudo apt install googletest
