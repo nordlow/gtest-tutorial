@@ -156,6 +156,8 @@ public class AcceptingAuthorizerFake implements Authorizer {
 ---
 ## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
 
+### Standard assertions
+
 Pattern: `[ASSERT,EXPECT]_`
 - `[TRUE,FALSE]` (boolean)
 - `[EQ,NE](expected, actual)` (equable (most) types)
@@ -173,11 +175,6 @@ Two kinds of behaviour on failures:
 - **Fatal**: starts with `ASSERT` and stops execution
 - **Non-fatal**: starts with `EXPECT` and continues execution
 
-Special ones:
-
-- `ASSERT_EXIT`: function should call system call `exit` with a specific exit code
-- `ASSERT_DEATH`:
-
 Sample:
 
 ```Cpp
@@ -189,6 +186,20 @@ failure.
 
 *Open question*: How cleverly are, for instance, containers (with many elements)
 printed?
+
+---
+### Exit assertions
+
+- `ASSERT_EXIT`: function should call system call `exit` with a specific exit code
+
+For instance:
+
+```D
+ASSERT_EXIT (square-root (-22.0), ::testing::ExitedWithCode(-1), "Error:
+Negative Input");
+```
+
+- `ASSERT_DEATH`:
 
 ---
 ## Defining a simple test
