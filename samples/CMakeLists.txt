@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 enable_testing()
 
+find_package(GTest REQUIRED)
+
 add_executable(runUnitTests
   sample1_unittest.cpp sample1.cpp
 )
