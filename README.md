@@ -293,7 +293,8 @@ success, 1 otherwise.
 ## Running tests via manual CMake
 
 Alternatively, CMake provides a simpler interface for running the tests
-automatically (through linking with `libgtest_main`).
+automatically (through linking with `libgtest_main`). See [this
+file](samples/CMakeLists.txt) for details.
 
 ---
 
