@@ -182,7 +182,9 @@ ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
 ```
 
 Values of left-hand and right-hand side expressions are printed upon assertion
-failure.
+failure. For the case of STL-containers the beginning of the containers are
+printed (but not necessarily at the elements indexes where the two containers
+differ).
 
 *Open question*: How cleverly are, for instance, containers (with many elements)
 printed?
