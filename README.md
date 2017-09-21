@@ -152,7 +152,7 @@ ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
 Values of left-hand and right-hand side expressions are printed upon assertion
 failure.
 
-*Question*: How cleverly are, for instance, containers (with many elements)
+*My question*: How cleverly are, for instance, containers (with many elements)
 printed?
 
 ## Defining a simple test
@@ -456,7 +456,7 @@ The `cardinality` parameter to `.Times()` can be either
 
 Compare this to a regexp `x? y? ... y*`.
 
-**Question!**: Why is there no `WillN()`?
+**My question!**: Why is there no `WillN()`?
 
 **Important!**: If you want side-effects in expectations be careful because
 evaluation order maybe not be what you expect.
