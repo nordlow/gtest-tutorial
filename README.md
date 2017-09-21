@@ -156,9 +156,14 @@ public class AcceptingAuthorizerFake implements Authorizer {
 ---
 ## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
 
-- Fatal failure: `ASSERT_[TRUE,FALSE,EQ,NE,LT,LE,GT,GE, STREQ,STRNE]`
-- Non-fatal failure: `EXPECT_[TRUE,FALSE,EQ,NE,LT,LE,GT,GE, STRCASEEQ,STRCASENE]`
-- Sample:
+Pattern: `[ASSERT,EXPECT]_[TRUE,FALSE, EQ,NE, LT,LE,GT,GE, STREQ,STRNE,STRCASEEQ,STRCASENE]`
+
+Two kinds of behaviour on error:
+
+- Fatal failure: starts with `ASSERT` and stops execution
+- Non-fatal failure: starts with `EXPECT` and continues execution
+
+Sample:
 
 ```Cpp
 ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
