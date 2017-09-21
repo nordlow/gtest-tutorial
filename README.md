@@ -241,7 +241,8 @@ in the same test case.
 Tests can be disabled by prefixing the symbolic name of either test case or the
 test with the string `_DISABLE`. A warning will be printed at the end of the
 test execution if there are any disabled tests. The flag
-`-gtest_also_run_disabled_tests` overrides this behaviour.
+`-gtest_also_run_disabled_tests` overrides this behaviour and runs all the
+disabled tests aswell.
 
 ---
 ## Using test fixtures
