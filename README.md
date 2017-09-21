@@ -447,8 +447,7 @@ The `cardinality` parameter to `.Times()` can be either
 - `Between(m, n)`
 - `Exactly(n)` or just `n`
 
-**Important!**: If you omit `Times()`, Google Mock will infer the cardinality
-for you according to these rules:
+**Important!**: Omitting `Times()` will infer the cardinality for accordingly:
 
 - If neither `WillOnce()` nor `WillRepeatedly()` is in the `EXPECT_CALL()`, the
   inferred cardinality is `Times(1)`.
