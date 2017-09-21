@@ -165,8 +165,8 @@ Pattern: `[ASSERT,EXPECT]_`
 - `[NEAR](expected, actual, absolute_range)` floating pointer numbers (with explicit `absolute_range`)
 
 Note that in order for diagnostics to be correct for EQ-functions the first
-parameter should be the expected value (constant) and the second should be the
-calculated.
+parameter should be the expected value (in some cases constant) and the second
+should be the calculated.
 
 Two kinds of behaviour on failures:
 
