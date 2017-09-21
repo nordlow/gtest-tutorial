@@ -631,6 +631,20 @@ EXPECT_CALL(turtle, GoTo(0, 0))  // #2
     .Times(2);
 ```
 
+If you don't want this use `RetiresOnSaturation` as in for instance
+
+```Cpp
+using ::testing::Return;
+...
+for (int i = n; i > 0; i--) {
+  EXPECT_CALL(turtle, GetX())
+    .WillOnce(Return(10*i))
+    .RetiresOnSaturation();
+}
+```
+
+.
+
 ---
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
