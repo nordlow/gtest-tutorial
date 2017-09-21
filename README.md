@@ -617,6 +617,21 @@ TEST(FooTest, DrawsLineSegment) {
 ```
 
 ---
+## All Expectations are sticky (unless said otherwise)
+
+Check that turtle is asked to go to the origin exactly twice (ignoring all other
+instructions it receives)?
+
+```Cpp
+using ::testing::_;
+...
+EXPECT_CALL(turtle, GoTo(_, _))  // #1
+    .Times(AnyNumber());
+EXPECT_CALL(turtle, GoTo(0, 0))  // #2
+    .Times(2);
+```
+
+---
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
