@@ -595,6 +595,28 @@ is found (you can think of it as "newer rules override older ones.") Compare
 with C++ virtual member overrides.
 
 ---
+## Ordered vs Unordered Calls
+
+By default expections are not checked in ordered. If you want ordering you need
+to do this:
+
+```Cpp
+using ::testing::InSequence;
+...
+TEST(FooTest, DrawsLineSegment) {
+  ...
+  {
+    InSequence dummy;
+
+    EXPECT_CALL(turtle, PenDown());
+    EXPECT_CALL(turtle, Forward(100));
+    EXPECT_CALL(turtle, PenUp());
+  }
+  Foo();
+}
+```
+
+---
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
