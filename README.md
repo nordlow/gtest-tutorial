@@ -4,10 +4,12 @@ Tutorial on learning the Google Test (GTest) testing framework.
 
 Here's the tutorial:
 
+---
 # Test Doubles and Google Test (Mock)
 
 We start by giving a short explanation of the terminology used in Google Test.
 
+---
 ## Test Double Terminology (according to [Uncle Bob](https://8thlight.com/blog/uncle-bob/))
 
 Is a formal name, analogous with a [stunt
@@ -18,6 +20,7 @@ The name might be misleading; note that the word "double" here refers to the
 
 These are defined in Gerard Meszaros's book and used by, for instance, Martin Fowler and Uncle Bob:
 
+---
 ## Sample interface
 
 ```Java
@@ -28,6 +31,7 @@ interface Authorizer
 ```
 
 
+---
 ### *dummy*:
 
 Sample implementation:
@@ -45,6 +49,7 @@ public class DummyAuthorizer implements Authorizer {
 - Return value is here designed to give error upon use (`NullPointerException`
   in Java)
 
+---
 ### *stub*: a kind of *dummy*
 
 Sample implementation:
@@ -60,6 +65,7 @@ public class AcceptingAuthorizerStub implements Authorizer {
 - Provide canned (statically predefined) answers (return values) to calls
 - Stubs (sometimes) verify *state*
 
+---
 ### *spy*: a kind of *stub*
 
 Sample implementation:
@@ -78,6 +84,7 @@ public class AcceptingAuthorizerSpy implements Authorizer {
 - Logs statistics on behaviour
 - Check somewhere (else) that a method, in this case `authorize`, was called.
 
+---
 ### *mock*: a kind of *spy*
 
 Sometimes used in an informal way to refer to the whole family of objects that are used in tests.
@@ -105,6 +112,7 @@ public class AcceptingAuthorizerVerificationMock implements Authorizer {
 - More interested in which function was called, with what arguments, when, and how often
 - Used by **mocking tools**
 
+---
 ### *fake*: a simulator (like none of the above)
 
 Sample implementation:
@@ -120,13 +128,16 @@ public class AcceptingAuthorizerFake implements Authorizer {
 - Has simplified business behavior
 - An in-memory database is a good example.
 
+---
 ### Sum up
 
 - Definition of stub, spy and mock can be auto-generated.
 - [See also article](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs)
 
+---
 ## Google's own classification of test types:
 
+---
 ### Small tests (unit tests)
 - Level: single function or module.
 - Duration: < could of seconds
@@ -135,10 +146,13 @@ public class AcceptingAuthorizerFake implements Authorizer {
   - Seldom: Software Engineer in Test (SET)
   - Hardly ever: Test Engineer (TE)
 
+---
 ### Medium tests (integration tests)
 
+---
 ### Large tests (acceptance tests)
 
+---
 ## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
 
 - Fatal failure: `ASSERT_[TRUE,FALSE,EQ,NE,LT,LE,GT,GE, STREQ,STRNE]`
@@ -155,6 +169,7 @@ failure.
 *My question*: How cleverly are, for instance, containers (with many elements)
 printed?
 
+---
 ## Defining a simple test
 
 Arguments to `TEST` should be valid C++ symbols without underscore.
@@ -187,6 +202,7 @@ Here the test case named `FactorialTest` contains the two tests
 Test results are grouped by test cases, so logically-related tests should be
 in the same test case.
 
+---
 ## Using test fixtures
 
 Tests for
@@ -251,6 +267,7 @@ Use `EXPECT_*` when you want the test to continue to reveal more errors after th
 assertion failure, and use `ASSERT_*` when continuing after failure doesn't make
 sense.
 
+---
 ## Running the tests
 
 The typical C/C++ `main()` function looks like
@@ -271,6 +288,7 @@ success, 1 otherwise.
 - GCC forces return value of `RUN_ALL_TESTS` to be handle (not ignored)
 - `RUN_ALL_TESTS` shall only be called *once*!
 
+---
 ## Google Mock: Example Turtle Graphics
 
 ```Cpp
@@ -289,9 +307,11 @@ class Turtle {
 
 It's preferred but not required for methods to be virtual.
 
+---
 ## Derive MockTurtle from Turtle
 
 ```Cpp
+---
 #include "gmock/gmock.h"  // Brings in Google Mock
 
 class MockTurtle : public Turtle {
@@ -316,6 +336,7 @@ public: // mocks must be public
 - If you're lazy and optimistic you can use `scripts/gen-erator/gmock_gen.py`.
 - Mocks should be defined in separate files, that is `MockTurtle` should be placed in `mock_turtle.h`.
 
+---
 ## Using Mocks
 
 1. Import
@@ -327,8 +348,11 @@ public: // mocks must be public
 For instance:
 
 ```Cpp
+---
 #include "path/to/mock-turtle.h"
+---
 #include "gmock/gmock.h"
+---
 #include "gtest/gtest.h"
 using ::testing::AtLeast;                     // #1
 
@@ -368,6 +392,7 @@ The line is clickable in Emacs and other tools that recognize GNU style messages
 Mock to report a violation as soon as it happens, with context (stack trace,
 etc) still being intact. This makes debugging much easier.
 
+---
 ## Using Google Mock with Any Testing Framework
 
 ```D
@@ -381,6 +406,7 @@ int main(int argc, char** argv) {
 }
 ```
 
+---
 ## Setting Expectations
 
 Balance between setting too strict and too loose expectations.
@@ -399,6 +425,7 @@ EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot 
 enabling more compact specifications (and automatic error diagnostics) compared
 to writing the `cardinality` loop ourselves.
 
+---
 ### Sample Expectation
 
 For instance,
@@ -413,6 +440,7 @@ EXPECT_CALL(turtle, GetX())
     .WillRepeatedly(Return(200)); // return 200 the remaining times
 ```
 
+---
 ### Matchers
 
 If you don't care about exact parameter values use
@@ -435,6 +463,7 @@ using ::testing::Ge;
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
 ```
 
+---
 ### Cardinality
 
 The `cardinality` can be zero, in the case when a member is expected *not* to be
@@ -461,6 +490,7 @@ evaluation order maybe not be what you expect.
 
 **My question!**: Why is there no `WillN()`?
 
+---
 ### Quiz
 
 Time for another quiz! What does this mean?:
@@ -476,8 +506,10 @@ EXPECT_CALL(turtle, GetY())
 Answer: It expects `GetY` to return 100 first time and 0 (default) the remaining
 three times.
 
+---
 ## Multiple Expectations
 
+---
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
 - reuse of Clang's C/Cpp parser enables
@@ -485,18 +517,21 @@ three times.
   - fully automated mock generation
 - used in Gripen software verification
 
+---
 ## Reads (in order of importance)
 - [The Little Mocker](https://8thlight.com/blog/uncle-bob/2014/05/14/TheLittleMocker.html)
 - [Google test on Wikipedia](https://en.wikipedia.org/wiki/Google_Test)
 - [Google test Primer](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md)
 - [Google Mock Cheat Sheet](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md)
 
+---
 ## Convert this document to HTML on Ubuntu via
 
 ```Shell
 TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md && $BROWSER $TMP
 ```
 
+---
 ## Various
 
 - Install Google Test/Mock on Ubuntu via the command
