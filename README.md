@@ -135,23 +135,23 @@ public class AcceptingAuthorizerFake implements Authorizer {
 - Definition of stub, spy and mock can be auto-generated.
 - [See also article](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs)
 
----
-## Google's own classification of test types:
+<!-- --- -->
+<!-- ## Google's own classification of test types: -->
 
----
-### Small tests (unit tests)
-- Level: single function or module.
-- Duration: < could of seconds
-- Written by:
-  - Often: Software Engineer (SWE)
-  - Seldom: Software Engineer in Test (SET)
-  - Hardly ever: Test Engineer (TE)
+<!-- --- -->
+<!-- ### Small tests (unit tests) -->
+<!-- - Level: single function or module. -->
+<!-- - Duration: < could of seconds -->
+<!-- - Written by: -->
+<!--   - Often: Software Engineer (SWE) -->
+<!--   - Seldom: Software Engineer in Test (SET) -->
+<!--   - Hardly ever: Test Engineer (TE) -->
 
----
-### Medium tests (integration tests)
+<!-- --- -->
+<!-- ### Medium tests (integration tests) -->
 
----
-### Large tests (acceptance tests)
+<!-- --- -->
+<!-- ### Large tests (acceptance tests) -->
 
 ---
 ## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
