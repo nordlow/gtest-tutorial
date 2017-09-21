@@ -9,6 +9,7 @@ cmake ../..
 make
 cp libgtest* /usr/lib/
 pushd ..
+
 #rm -rf build
 
 popd
