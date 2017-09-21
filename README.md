@@ -199,7 +199,7 @@ output
 
 For instance:
 
-```D
+```Cpp
 ASSERT_EXIT(square-root (-22.0), ::testing::ExitedWithCode(-1), "Error: Negative Input");
 ```
 
@@ -445,7 +445,7 @@ etc) still being intact. This makes debugging much easier.
 ---
 ## Using Google Mock with Any Testing Framework
 
-```D
+```Cpp
 int main(int argc, char** argv) {
   // The following line causes Google Mock to throw an exception on failure,
   // which will be interpreted by your testing framework as a test failure.
@@ -464,7 +464,7 @@ Balance between setting too strict and too loose expectations.
 `EXPECT_CALL()` sets an expectation on a mock method using a *declarative*
 domain-specific language:
 
-```D
+```Cpp
 ...
 EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot because of limitations in C++
     .Times(cardinality)
@@ -480,7 +480,7 @@ to writing the `cardinality` loop ourselves.
 
 For instance,
 
-```D
+```Cpp
 using ::testing::Return;
 ...
 EXPECT_CALL(turtle, GetX())
@@ -495,7 +495,7 @@ EXPECT_CALL(turtle, GetX())
 
 If you don't care about exact parameter values use
 
-```D
+```Cpp
 using ::testing::_;
 ...
 EXPECT_CALL(turtle, Forward(_)); // turtle moved forward by some arbitrary step
@@ -507,7 +507,7 @@ a list of all the others.
 
 For instance, the `Ge` matcher can be used here as
 
-```D
+```Cpp
 using ::testing::Ge;
 ...
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
@@ -545,7 +545,7 @@ evaluation order maybe not be what you expect.
 
 To check that we have understood what does this mean?:
 
-```D
+```Cpp
 using ::testing::Return;
 ...
 EXPECT_CALL(turtle, GetY())
@@ -562,7 +562,7 @@ three times.
 By default, mock object members get inferred return values when using C++11 (for default
 constructable types).
 
-```D
+```Cpp
 using ::testing::Return;
 ...
 EXPECT_CALL(turtle, GetX())
@@ -578,6 +578,16 @@ the function every time.
 
 ---
 ## Multiple Expectations
+
+Very often you need multiple expectations as in
+
+```Cpp
+using ::testing::_;
+...
+EXPECT_CALL(turtle, Forward(_));  // #1
+EXPECT_CALL(turtle, Forward(10))  // #2
+    .Times(2);
+```
 
 ---
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
