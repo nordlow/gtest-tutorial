@@ -540,7 +540,8 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 sudo apt install googletest
 ```
 
-together with Googles own hack
+only installs source under `/usr/src/googltest`. To install the libs build and
+install it with Googles own hack
 
 ```Shell
 cd /usr/src/googletest/googletest
@@ -553,7 +554,7 @@ cd ..
 sudo rm -rf build
 ```
 
-...
+Not ideal.
 
 ```Shell
 git clone --recurse-submodules https://github.com/google/googletest
