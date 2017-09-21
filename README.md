@@ -269,7 +269,7 @@ assertion failure, and use `ASSERT_*` when continuing after failure doesn't make
 sense.
 
 ---
-## Running the tests
+## Running tests via manual main()
 
 The typical C/C++ `main()` function looks like
 
@@ -290,6 +290,13 @@ success, 1 otherwise.
 - `RUN_ALL_TESTS` shall only be called *once*!
 
 ---
+## Running tests via manual CMake
+
+Alternatively, CMake provides a simpler interface for running the tests
+automatically (through linking with `libgtest_main`).
+
+---
+
 ## Google Mock: Example Turtle Graphics
 
 ```Cpp
