@@ -538,15 +538,22 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 
 ```Shell
 sudo apt install googletest
-
-# ugly:
-cd /usr/src/gtest
-sudo cmake .
-sudo make
-sudo mv libg* /usr/lib/
 ```
 
-or checkout and build via
+together with Googles own hack
+
+```Shell
+cd /usr/src/googletest/googletest
+sudo mkdir build
+cd build
+sudo cmake ..
+sudo make
+sudo cp libgtest* /usr/lib/
+cd ..
+sudo rm -rf build
+```
+
+...
 
 ```Shell
 git clone --recurse-submodules https://github.com/google/googletest
