@@ -30,6 +30,7 @@ interface Authorizer
 }
 ```
 
+Here are sample definitions for the five well-known kinds of test doubles in increasing complexity:
 
 ---
 ### 1. *dummy*:
