@@ -543,7 +543,7 @@ evaluation order maybe not be what you expect.
 ---
 ### Quiz
 
-Time for another quiz! What does this mean?:
+To check that we have understood what does this mean?:
 
 ```D
 using ::testing::Return;
@@ -557,10 +557,24 @@ Answer: It expects `GetY` to return 100 first time and 0 (default) the remaining
 three times.
 
 ---
-## Actions: What Should It Do?
+### Default return values
 
-All mock object members get inferred return values in C++11 (for default
+By default, mock object members get inferred return values when using C++11 (for default
 constructable types).
+
+```D
+using ::testing::Return;
+...
+EXPECT_CALL(turtle, GetX())
+    .Times(10)
+    .WillOnce(Return(100))
+    .WillOnce(Return(200))
+    .WillOnce(Return(300));
+    // expected Return(0), 7 times, if that's the default value of the return type
+```
+
+after all `WillOnce()`s are used up, Google Mock will do the default action for
+the function every time.
 
 ---
 ## Multiple Expectations
