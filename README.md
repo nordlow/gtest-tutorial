@@ -381,7 +381,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-## Setting expectations
+## Setting Expectations
 
 Balance between setting too strict and too loose expectations.
 
@@ -399,6 +399,8 @@ EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot 
 enabling more compact specifications (and automatic error diagnostics) compared
 to writing the cardinality loop ourselves.
 
+### Sample Expectation
+
 For instance,
 
 ```D
@@ -410,6 +412,8 @@ EXPECT_CALL(turtle, GetX())
     .WillOnce(Return(150))        // return 150 second time
     .WillRepeatedly(Return(200)); // return 200 the remaining times
 ```
+
+### Matchers
 
 If you don't care about exact parameter values use
 
@@ -430,6 +434,8 @@ using ::testing::Ge;
 ...
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
 ```
+
+### Cardinality
 
 The `cardinality` can be zero, in the case when a member is expected *not* to be
 called.
@@ -456,6 +462,8 @@ Compare this to a regexp `x? y? ... y*`.
 **Important!**: If you want side-effects in expectations be careful because
 evaluation order maybe not be what you expect.
 
+### Quiz
+
 Time for another quiz! What does this mean?:
 
 ```D
@@ -466,8 +474,8 @@ EXPECT_CALL(turtle, GetY())
 .WillOnce(Return(100));
 ```
 
-It expectes `GetY` to return 100 first time and 0 (default) the remaining three
-times.
+Answer: It expects `GetY` to return 100 first time and 0 (default) the remaining
+three times.
 
 ## Multiple Expectations
 
