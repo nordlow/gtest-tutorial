@@ -161,8 +161,8 @@ Pattern: `[ASSERT,EXPECT]_`
 - `[EQ,NE]` (equable (most) types)
 - `[LT,LE,GT,GE]` (comparable types)
 - `[STREQ,STRNE,STRCASEEQ,STRCASENE]` for C-strings
-- `[FLOAT_EQ,DOUBLE_EQ](expected, actual)` floating pointer numbers (implicit range)
-- `[NEAR](expected, actual, absolute_range)` floating pointer numbers (explicit `absolute_range`)
+- `[FLOAT_EQ,DOUBLE_EQ](expected, actual)` floating pointer numbers (with implicit range)
+- `[NEAR](expected, actual, absolute_range)` floating pointer numbers (with explicit `absolute_range`)
 
 Two kinds of behaviour on failures:
 
