@@ -2,11 +2,15 @@
 
 # this script should be run as sudo
 
-cd /usr/src/googletest/googletest
+pushd /usr/src/googletest
 mkdir build
-cd build
+pushd build
 cmake ../..
 make
 cp libgtest* /usr/lib/
-cd ..
+pushd ..
 #rm -rf build
+
+popd
+popd
+popd
