@@ -1,5 +1,3 @@
 #!/bin/bash
 
-cmake .
-make
-./runUnitTests
+cmake . && make && ./runUnitTests
