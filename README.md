@@ -189,7 +189,7 @@ differ).
 ---
 ### Exit assertions
 
-- `ASSERT_EXIT`: function should call system call `exit` with a specific exit code
+- `ASSERT_EXIT`: assert that a function calls `exit` with a specific exit code
 
 For instance:
 
