@@ -3,9 +3,9 @@
 # this script should be run as sudo
 
 pushd /usr/src/googletest
-mkdir build
+mkdir -p build
 pushd build
-cmake ../..
+cmake ..
 make
 cp libgtest* /usr/lib/
 pushd ..
