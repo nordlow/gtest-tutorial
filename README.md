@@ -397,7 +397,7 @@ EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot 
 ```
 
 enabling more compact specifications (and automatic error diagnostics) compared
-to writing the cardinality loop ourselves.
+to writing the `cardinality` loop ourselves.
 
 ### Sample Expectation
 
@@ -447,12 +447,12 @@ The `cardinality` parameter to `.Times()` can be either
 - `Between(m, n)`
 - `Exactly(n)` or just `n`
 
-**Important!**: Omitting `Times()` will infer the cardinality for accordingly:
+**Important!**: Omitting `Times()` will infer the `cardinality` accordingly:
 
 - If neither `WillOnce()` nor `WillRepeatedly()` is in the `EXPECT_CALL()`, the
-  inferred cardinality is `Times(1)`.
-- If there are n `WillOnce()`'s but no `WillRepeatedly()`, where n >= 1, the cardinality is `Times(n)`.
-- If there are n `WillOnce()`'s and one `WillRepeatedly()`, where n >= 0, the cardinality is `Times(AtLeast(n))`.
+  inferred `cardinality` is `Times(1)`.
+- If there are n `WillOnce()`'s but no `WillRepeatedly()`, where n >= 1, the `cardinality` is `Times(n)`.
+- If there are n `WillOnce()`'s and one `WillRepeatedly()`, where n >= 0, the `cardinality` is `Times(AtLeast(n))`.
 
 Compare this to a regexp `x? y? ... y*`.
 
