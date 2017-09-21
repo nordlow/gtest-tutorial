@@ -1,7 +1,4 @@
 #!/bin/bash
 
-mkdir -p build
-pushd build
-cmake ..
+cmake .
 make test
-popd
