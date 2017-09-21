@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# this script should be run as sudo
+
 cd /usr/src/googletest/googletest
-sudo mkdir build
+mkdir build
 cd build
-sudo cmake ..
-sudo make
-sudo cp libgtest* /usr/lib/
+cmake ../..
+make
+cp libgtest* /usr/lib/
 cd ..
-sudo rm -rf build
+#rm -rf build
