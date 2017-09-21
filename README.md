@@ -167,7 +167,7 @@ ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
 Values of left-hand and right-hand side expressions are printed upon assertion
 failure.
 
-*My question*: How cleverly are, for instance, containers (with many elements)
+*Open question*: How cleverly are, for instance, containers (with many elements)
 printed?
 
 ---
@@ -475,15 +475,15 @@ EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 step
 ---
 ### Cardinality
 
-The `cardinality` can be zero, in the case when a member is expected *not* to be
-called.
-
 The `cardinality` parameter to `.Times()` can be either
 
 - `AtLeast(n)`
 - `AtMost(n)`
 - `Between(m, n)`
 - `Exactly(n)` or just `n`
+
+**Important!**: The `cardinality` can be zero, in the case when a member is
+expected *not* to be called.
 
 **Important!**: Omitting `Times()` will infer the `cardinality` accordingly:
 
@@ -497,7 +497,7 @@ Compare this to a regexp `x? y? ... y*`.
 **Important!**: If you want side-effects in expectations be careful because
 evaluation order maybe not be what you expect.
 
-**My question!**: Why is there no `WillN()`?
+**Open question!**: Why is there no `WillN()`?
 
 ---
 ### Quiz
