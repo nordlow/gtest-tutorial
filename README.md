@@ -187,10 +187,15 @@ printed (but not necessarily at the element indexes where the two containers
 differ).
 
 ---
-### Exit assertions
+### Death tests with exit assertions
 
-- `ASSERT_EXIT`: assert that a function calls `exit` with a specific exit code
-  and with specific print to `stdout`
+- `ASSERT_DEATH(statement, expected_message)`: assert that a `statement` does a
+system call to `exit()` and prints a specific `expected_message` to standard
+output
+
+- `ASSERT_EXIT(statement, predicate, expected_message)`: assert that a
+`statement` does a system call to `exit()` fulfilling `predicate` and prints a specific
+`expected_message` to standard output
 
 For instance:
 
@@ -198,8 +203,6 @@ For instance:
 ASSERT_EXIT (square-root (-22.0), ::testing::ExitedWithCode(-1), "Error:
 Negative Input");
 ```
-
-- `ASSERT_DEATH`:
 
 ---
 ## Defining a simple test
