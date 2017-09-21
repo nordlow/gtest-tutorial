@@ -7,7 +7,7 @@ mkdir -p build
 pushd build
 cmake ..
 make
-cp libgtest* /usr/lib/
+cp googlemock/libg*  googlemock/gtest/libg* /usr/lib/
 pushd ..
 
 #rm -rf build
