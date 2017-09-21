@@ -204,7 +204,7 @@ Negative Input");
 ---
 ## Defining a simple test
 
-Arguments to `TEST` *should* (but must not) be valid C++ symbols without underscore.
+Arguments to `TEST` *must* be valid C++ symbols and shouldn't (but can) contain an underscore.
 
 For instance, a test case for
 
