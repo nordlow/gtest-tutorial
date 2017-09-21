@@ -32,7 +32,7 @@ interface Authorizer
 
 
 ---
-### *dummy*:
+### 1. *dummy*:
 
 Sample implementation:
 
@@ -49,7 +49,7 @@ public class DummyAuthorizer implements Authorizer {
 - Return value is here (in Java) designed to give error upon use (`NullPointerException`)
 
 ---
-### *stub*: a kind of *dummy*
+### 2. *stub*: a kind of *dummy*
 
 Sample implementation:
 
@@ -65,7 +65,7 @@ public class AcceptingAuthorizerStub implements Authorizer {
 - Stubs (sometimes) verify *state*
 
 ---
-### *spy*: a kind of *stub*
+### 3. *spy*: a kind of *stub*
 
 Sample implementation:
 
@@ -84,7 +84,7 @@ public class AcceptingAuthorizerSpy implements Authorizer {
 - Check somewhere (else) that a method, in this case `authorize`, was called.
 
 ---
-### *mock*: a kind of *spy*
+### 4. *mock*: a kind of *spy*
 
 Sometimes used in an informal way to refer to the whole family of objects that are used in tests.
 
@@ -112,7 +112,7 @@ public class AcceptingAuthorizerVerificationMock implements Authorizer {
 - Used by **mocking tools**
 
 ---
-### *fake*: a simulator (like none of the above)
+### 5. *fake*: a simulator (like none of the above)
 
 Sample implementation:
 
