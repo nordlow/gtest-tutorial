@@ -634,14 +634,18 @@ EXPECT_CALL(turtle, GoTo(0, 0))  // #2
 If you don't want this use `RetiresOnSaturation` as in for instance
 
 ```Cpp
+using ::testing::InSequence;
 using ::testing::Return;
 ...
-for (int i = n; i > 0; i--) {
-  EXPECT_CALL(turtle, GetX())
-    .WillOnce(Return(10*i))
-    .RetiresOnSaturation();
-}
-```
+{
+  InSequence s;
+
+  for (int i = 1; i <= n; i++) {
+    EXPECT_CALL(turtle, GetX())
+        .WillOnce(Return(10*i))
+        .RetiresOnSaturation();
+  }
+}```
 
 .
 
