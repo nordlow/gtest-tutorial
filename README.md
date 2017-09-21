@@ -538,6 +538,11 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 
 ```Shell
 sudo apt install googletest
+
+cd /usr/src/gtest
+sudo cmake .
+sudo make
+sudo mv libg* /usr/lib/
 ```
 
 or checkout and build via
