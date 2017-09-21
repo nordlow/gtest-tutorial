@@ -534,10 +534,10 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 ---
 ## Various
 
-- Install Google Test/Mock on Ubuntu via the command
+- Install Google Test on Ubuntu via the command
 
 ```Shell
-sudo apt install google-mock
+sudo apt install googletest
 ```
 
 or checkout and build via
