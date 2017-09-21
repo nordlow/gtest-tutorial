@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cmake .
-make test
+make
+./runUnitTests
