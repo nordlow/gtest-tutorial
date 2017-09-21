@@ -156,7 +156,7 @@ public class AcceptingAuthorizerFake implements Authorizer {
 ---
 ## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
 
-Pattern: `[ASSERT,EXPECT]_
+Pattern: `[ASSERT,EXPECT]_`
 - `[TRUE,FALSE]` (boolean)
 - `[EQ,NE]` (equable (most) types)
 - `[LT,LE,GT,GE]` (comparable types)
