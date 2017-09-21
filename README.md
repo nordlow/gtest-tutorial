@@ -456,10 +456,10 @@ The `cardinality` parameter to `.Times()` can be either
 
 Compare this to a regexp `x? y? ... y*`.
 
-**My question!**: Why is there no `WillN()`?
-
 **Important!**: If you want side-effects in expectations be careful because
 evaluation order maybe not be what you expect.
+
+**My question!**: Why is there no `WillN()`?
 
 ### Quiz
 
