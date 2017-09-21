@@ -539,6 +539,7 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 ```Shell
 sudo apt install googletest
 
+# ugly:
 cd /usr/src/gtest
 sudo cmake .
 sudo make
