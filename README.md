@@ -173,7 +173,7 @@ printed?
 ---
 ## Defining a simple test
 
-Arguments to `TEST` should be valid C++ symbols without underscore.
+Arguments to `TEST` *should* (but must not) be valid C++ symbols without underscore.
 
 For instance, a test case for
 
@@ -197,7 +197,7 @@ TEST(FactorialTest, HandlesPositiveInput) {
 }
 ```
 
-Here the test case named `FactorialTest` contains the two tests
+Here, the test case named `FactorialTest` contains the two tests
 `HandlesZeroInput` and `HandlesPositiveInput`.
 
 Test results are grouped by test cases, so logically-related tests should be
