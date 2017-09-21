@@ -164,9 +164,14 @@ Pattern: `[ASSERT,EXPECT]_`
 - `[FLOAT_EQ,DOUBLE_EQ](expected, actual)` floating pointer numbers (with implicit range)
 - `[NEAR](expected, actual, absolute_range)` floating pointer numbers (with explicit `absolute_range`)
 
-Note that in order for diagnostics to be correct for EQ-functions the first
-parameter should be the expected value (in some cases constant) and the second
-should be the one calculated by function under test.
+Special ones:
+
+- `ASSERT_EXIT`: function should call system call `exit` with a specific exit code
+- `ASSERT_DEATH`:
+
+Note that in order for diagnostics to be correct for `...EQ/NEQ`-functions the
+first parameter should be the expected value (in some cases constant) and the
+second should be the one calculated by function under test.
 
 Two kinds of behaviour on failures:
 
