@@ -166,7 +166,7 @@ Pattern: `[ASSERT,EXPECT]_`
 
 Note that in order for diagnostics to be correct for EQ-functions the first
 parameter should be the expected value (in some cases constant) and the second
-should be the calculated.
+should be the one calculated by function under test.
 
 Two kinds of behaviour on failures:
 
