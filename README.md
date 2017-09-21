@@ -427,8 +427,8 @@ domain-specific language:
 ...
 EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot because of limitations in C++
     .Times(cardinality)
-    .WillOnce(action)
-    .WillRepeatedly(action);
+    .WillOnce(action) // zero or more
+    .WillRepeatedly(action); // zero or once
 ```
 
 enabling more compact specifications (and automatic error diagnostics) compared
