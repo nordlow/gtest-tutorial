@@ -158,10 +158,10 @@ public class AcceptingAuthorizerFake implements Authorizer {
 
 Pattern: `[ASSERT,EXPECT]_[TRUE,FALSE, EQ,NE, LT,LE,GT,GE, STREQ,STRNE,STRCASEEQ,STRCASENE]`
 
-Two kinds of behaviour on error:
+Two kinds of behaviour on failures:
 
-- Fatal failure: starts with `ASSERT` and stops execution
-- Non-fatal failure: starts with `EXPECT` and continues execution
+- **Fatal**: starts with `ASSERT` and stops execution
+- **Non-fatal**: starts with `EXPECT` and continues execution
 
 Sample:
 
