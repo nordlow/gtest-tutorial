@@ -557,6 +557,12 @@ Answer: It expects `GetY` to return 100 first time and 0 (default) the remaining
 three times.
 
 ---
+## Actions: What Should It Do?
+
+All mock object members get inferred return values in C++11 (for default
+constructable types).
+
+---
 ## Multiple Expectations
 
 ---
