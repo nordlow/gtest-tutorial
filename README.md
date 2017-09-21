@@ -200,8 +200,7 @@ output
 For instance:
 
 ```D
-ASSERT_EXIT (square-root (-22.0), ::testing::ExitedWithCode(-1), "Error:
-Negative Input");
+ASSERT_EXIT(square-root (-22.0), ::testing::ExitedWithCode(-1), "Error: Negative Input");
 ```
 
 ---
