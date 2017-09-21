@@ -158,11 +158,15 @@ public class AcceptingAuthorizerFake implements Authorizer {
 
 Pattern: `[ASSERT,EXPECT]_`
 - `[TRUE,FALSE]` (boolean)
-- `[EQ,NE]` (equable (most) types)
+- `[EQ,NE](expected, actual)` (equable (most) types)
 - `[LT,LE,GT,GE]` (comparable types)
 - `[STREQ,STRNE,STRCASEEQ,STRCASENE]` for C-strings
 - `[FLOAT_EQ,DOUBLE_EQ](expected, actual)` floating pointer numbers (with implicit range)
 - `[NEAR](expected, actual, absolute_range)` floating pointer numbers (with explicit `absolute_range`)
+
+Note that in order for diagnostics to be correct for EQ-functions the first
+parameter should be the expected value (constant) and the second should be the
+calculated.
 
 Two kinds of behaviour on failures:
 
