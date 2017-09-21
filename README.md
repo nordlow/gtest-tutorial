@@ -589,6 +589,11 @@ EXPECT_CALL(turtle, Forward(10))  // #2
     .Times(2);
 ```
 
+*Important fact*: Google Mock will search the expectations in the reverse order
+they are defined, and stop when an active expectation that matches the arguments
+is found (you can think of it as "newer rules override older ones.") Compare
+with C++ virtual member overrides.
+
 ---
 ## Alternative tool: [dextool](https://github.com/joakim-brannstrom/dextool/)
 
