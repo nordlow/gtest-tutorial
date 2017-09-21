@@ -156,7 +156,11 @@ public class AcceptingAuthorizerFake implements Authorizer {
 ---
 ## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
 
-Pattern: `[ASSERT,EXPECT]_[TRUE,FALSE, EQ,NE, LT,LE,GT,GE, STREQ,STRNE,STRCASEEQ,STRCASENE]`
+Pattern: `[ASSERT,EXPECT]_
+- `[TRUE,FALSE]` (boolean)
+- `[EQ,NE]` (equable (most) types)
+- `[LT,LE,GT,GE]` (comparable types)
+- `[STREQ,STRNE,STRCASEEQ,STRCASENE]` for C-strings
 
 Two kinds of behaviour on failures:
 
