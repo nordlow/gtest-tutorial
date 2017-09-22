@@ -93,7 +93,7 @@ TEST(IsPrimeTest, Positive) {
   EXPECT_FALSE(IsPrime(4));
   EXPECT_TRUE(IsPrime(5));
   EXPECT_FALSE(IsPrime(6));
-  EXPECT_FALSE(IsPrime(23));
+  EXPECT_TRUE(IsPrime(23));
 }
 }  // namespace
 
