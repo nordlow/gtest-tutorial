@@ -1,6 +1,11 @@
 #include <limits.h>
 #include <vector>
 #include "gtest/gtest.h"
+#include "gmock/gmock.h"
+
+/** Test STL-container comparison
+    See also: https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#container-matchers
+*/
 
 namespace {
 
@@ -11,7 +16,7 @@ TEST(StdVectorTest, DiffersInTheBeginning) {
     std::vector<int> y(n);
     y[0] = 20;
 
-    EXPECT_EQ(x, y);
+    EXPECT_THAT(x, ::testing::ContainerEq(y));
 }
 
 TEST(StdVectorTest, DiffersInTheMiddle) {
@@ -21,7 +26,7 @@ TEST(StdVectorTest, DiffersInTheMiddle) {
     std::vector<int> y(n);
     y[n/2] = 20;
 
-    EXPECT_EQ(x, y);
+    EXPECT_THAT(x, ::testing::ContainerEq(y));
 }
 
 TEST(StdVectorTest, DiffersInTheEnd) {
@@ -31,7 +36,7 @@ TEST(StdVectorTest, DiffersInTheEnd) {
     std::vector<int> y(n);
     y[n - 1] = 20;
 
-    EXPECT_EQ(x, y);
+    EXPECT_THAT(x, ::testing::ContainerEq(y));
 }
 
 }
