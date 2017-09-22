@@ -239,7 +239,7 @@ Test results are grouped by test cases, so logically-related tests should be
 in the same test case.
 
 Tests can be disabled by prefixing the symbolic name of either test case or the
-test with the string `_DISABLE`. A warning will be printed at the end of the
+test with the string `DISABLE_`. A warning will be printed at the end of the
 test execution if there are any disabled tests. The flag
 `-gtest_also_run_disabled_tests` overrides this behaviour and runs all the
 disabled tests aswell.
@@ -681,7 +681,7 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 sudo apt install googletest
 ```
 
-only installs source under `/usr/src/googltest`. To install the libs build and
+only installs source under `/usr/src/googletest`. To install the libs build and
 install it with Googles own hack
 
 ```Shell
