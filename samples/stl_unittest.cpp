@@ -15,6 +15,8 @@ TEST(StdVectorTest, DiffersInTheBeginning) {
     std::vector<int> x(n);
     std::vector<int> y(n);
     y[0] = 20;
+    y[1] = 30;
+    y[2] = 40;
 
     EXPECT_THAT(x, ::testing::ContainerEq(y));
 }
@@ -24,7 +26,9 @@ TEST(StdVectorTest, DiffersInTheMiddle) {
 
     std::vector<int> x(n);
     std::vector<int> y(n);
-    y[n/2] = 20;
+    y[n/2 + 0] = 20;
+    y[n/2 + 1] = 30;
+    y[n/2 + 3] = 40;
 
     EXPECT_THAT(x, ::testing::ContainerEq(y));
 }
