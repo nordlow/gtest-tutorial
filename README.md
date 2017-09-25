@@ -2,19 +2,16 @@
 
 Tutorial on learning the Google Test (GTest) testing framework.
 
-Three lines of wisdom
+# Three lines of wisdom
 
 - You can't stay agile without clean code.
 - You can't have clean code without refactoring.
 - You can't refactor without good automated tests.
 
----
-# Test Doubles and Google Test (Mock)
-
-We start by giving a short explanation of the terminology used in Google Test.
+First a short explanation of the terminology used in Google Test.
 
 ---
-## Test Double Terminology (according to [Uncle Bob](https://8thlight.com/blog/uncle-bob/))
+# Test Double Terminology (according to [Uncle Bob](https://8thlight.com/blog/uncle-bob/))
 
 Is a formal name, analogous with a [stunt
 double](https://en.wikipedia.org/wiki/Stunt_double). It is a generic term for any kind of pretend object used in place of a real object during testing.
@@ -157,7 +154,8 @@ public class AcceptingAuthorizerFake implements Authorizer {
 <!-- --- -->
 <!-- ### Large tests (acceptance tests) -->
 
----
+# Google Test and Mock presentation
+
 ## [Assertions](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md#assertions)
 
 ### Standard assertions
