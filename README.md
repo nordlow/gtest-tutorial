@@ -1,8 +1,6 @@
 # gtest-tutorial
 
-Tutorial on learning the Google Test (GTest) testing framework.
-
-# Three lines of wisdom
+Three lines of wisdom.
 
 - You can't stay agile without clean code.
 - You can't have clean code without refactoring.
