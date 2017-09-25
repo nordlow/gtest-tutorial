@@ -2,7 +2,11 @@
 
 Tutorial on learning the Google Test (GTest) testing framework.
 
-Here's the tutorial:
+Three lines of wisdom
+
+- You can't stay agile without clean code.
+- You can't have clean code without refactoring.
+- You can't refactor without good automated tests.
 
 ---
 # Test Doubles and Google Test (Mock)
