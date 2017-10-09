@@ -500,7 +500,7 @@ To customize the default action for a particular *method*, use `ON_CALL()`:
 ON_CALL(mock_object, method(matchers))
     .With(multi_argument_matcher)  ?
     .WillByDefault(action);
-    ```
+```
 
 ---
 ## Setting Expectations
