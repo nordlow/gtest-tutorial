@@ -361,7 +361,6 @@ It's preferred but not required for methods to be virtual.
 ## Derive MockTurtle from Turtle
 
 ```Cpp
----
 #include "gmock/gmock.h"  // Brings in Google Mock
 
 class MockTurtle : public Turtle {
@@ -421,11 +420,9 @@ class MockStack : public Stack<Elem> {
 For instance:
 
 ```Cpp
----
+
 #include "path/to/mock-turtle.h"
----
 #include "gmock/gmock.h"
----
 #include "gtest/gtest.h"
 using ::testing::AtLeast;                     // #1
 
