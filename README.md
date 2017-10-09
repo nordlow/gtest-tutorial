@@ -457,6 +457,32 @@ int main(int argc, char** argv) {
 ```
 
 ---
+## Setting Default Action
+
+Customize the default action for (free) *functions* with return type `T` globally:
+
+```Cpp
+using ::testing::DefaultValue;
+
+// Sets the default value to be returned. T must be CopyConstructible.
+DefaultValue<T>::Set(value);
+// Sets a factory. Will be invoked on demand. T must be MoveConstructible.
+//   T MakeT();
+DefaultValue<T>::SetFactory(&MakeT);
+// ... use the mocks ...
+// Resets the default value.
+DefaultValue<T>::Clear();
+```
+
+To customize the default action for a particular *method*, use `ON_CALL()`:
+
+```Cpp
+ON_CALL(mock_object, method(matchers))
+    .With(multi_argument_matcher)  ?
+    .WillByDefault(action);
+    ```
+
+---
 ## Setting Expectations
 
 Balance between setting too strict and too loose expectations.
