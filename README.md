@@ -417,8 +417,8 @@ class MockStack : public Stack<Elem> {
 
 1. Import
 2. Create mock objects
-3. Optionally, set default actions on mock objects (`ON_CALL`)
-4. Set expectations on behaviour of mock objects (`EXPECT_CALL`)
+3. Optionally, set default actions on mock objects (using `ON_CALL`)
+4. Set expectations on behaviour of mock objects (using `EXPECT_CALL`)
 5. Exercise code that use mock objects
 6. Upon destruction, Google Mock verifies that expectations have been satisfied
 
