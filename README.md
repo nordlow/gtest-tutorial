@@ -169,6 +169,7 @@ Pattern: `[ASSERT,EXPECT]_`
 - `[STREQ,STRNE,STRCASEEQ,STRCASENE]` for C-strings
 - `[FLOAT_EQ,DOUBLE_EQ](expected, actual)` floating pointer numbers (with implicit range)
 - `[NEAR](expected, actual, absolute_range)` floating pointer numbers (with explicit `absolute_range`)
+- `THAT(expression, m)`, generic: true if expression matcher matcher `m`
 
 Note that in order for diagnostics to be correct for `...EQ/NEQ`-functions the
 first parameter should be the expected value (in some cases constant) and the
