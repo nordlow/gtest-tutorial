@@ -509,6 +509,12 @@ ON_CALL(mock_object, method(matchers))
 ```
 
 ---
+### Actions
+
+Actions specify what a mock function should do when invoked, that is it *defines
+behaviour*.
+
+---
 ## Setting Expectations
 
 Balance between setting too strict and too loose expectations.
