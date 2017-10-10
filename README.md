@@ -556,6 +556,18 @@ The underscore `_` here is called a *matcher* (as in Erlang's pattern
 matching). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
 a list of all the others.
 
+If you want to match a specific type `T` use
+
+```Cpp
+A<T>()
+```
+
+or
+
+```Cpp
+An<T>()
+```
+
 For instance, the `Ge` matcher can be used here as
 
 ```Cpp
