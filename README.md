@@ -574,11 +574,13 @@ An<T>()
 
 For more specific comparison matching use either
 
+| Expression         | Meaning           |
+| ------------------ |:-----------------:|
 | Eq(value) or value | argument == value |
 | Ge(value)          | argument >= value |
-| Gt(value)          | argument > value |
+| Gt(value)          | argument > value  |
 | Le(value)          | argument <= value |
-| Lt(value)          | argument < value |
+| Lt(value)          | argument < value  |
 | Ne(value)          | argument != value |
 | IsNull()           | argument is a NULL pointer (raw or smart) |
 | NotNull()          | argument is a non-null pointer (raw or smart) |
