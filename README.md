@@ -508,7 +508,7 @@ ON_CALL(mock_object, method(matchers))
 Balance between setting too strict and too loose expectations.
 
 `EXPECT_CALL()` sets an expectation (how will it be called? what will it do?) on
-a mock method using a *declarative* domain-specific language:
+a mock method using a *declarative* domain-specific language. It's complete spec is:
 
 ```Cpp
 ...
