@@ -602,9 +602,13 @@ Other matchers are
 - [String Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#string-matchers)
 - [STL-Container Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#string-matchers)
 - [Member-Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#member-matchers)
+- [Matching the Result of a Function or Functor](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matching-the-result-of-a-function-or-functor)
 - [Pointer Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#pointer-matchers)
 - [Multiargument Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#multiargument-matchers)
-- [Matching the Result of a Function or Functor](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matching-the-result-of-a-function-or-functor)
+- [Composite Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#composite-matchers)
+- [Adapters for Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#adapters-for-matchers)
+- [Matchers as Predicates](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers-as-predicates)
+- [Defining Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#defining-matchers)
 
 ---
 ### Cardinality
