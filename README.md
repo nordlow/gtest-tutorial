@@ -507,12 +507,12 @@ ON_CALL(mock_object, method(matchers))
 
 Balance between setting too strict and too loose expectations.
 
-`EXPECT_CALL()` sets an expectation on a mock method using a *declarative*
-domain-specific language:
+`EXPECT_CALL()` sets an expectation (how will it be called? what will it do?) on
+a mock method using a *declarative* domain-specific language:
 
 ```Cpp
 ...
-EXPECT_CALL(mock_object, method(matchers)) // separated by comma instead of dot because of limitations in C++
+EXPECT_CALL(mock_object, method(matchers)) // separated by comma (limitations in C/C++-preprocessor)
     .Times(cardinality)
     .WillOnce(action) // zero or more
     .WillRepeatedly(action); // zero or once
