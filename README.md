@@ -8,6 +8,8 @@ Three lines of wisdom.
 
 First a short explanation of the terminology used in Google Test.
 
+This tutorial has colored code and merges three documents into one.
+
 ---
 # Test Double Terminology (according to [Uncle Bob](https://8thlight.com/blog/uncle-bob/))
 
