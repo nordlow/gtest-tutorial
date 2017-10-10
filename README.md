@@ -556,7 +556,7 @@ The underscore `_` here is called a *matcher* (as in Erlang's pattern
 matching). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
 a list of all the others.
 
-If you want to match paramater against a specific type `T` use
+If you instead want to match a parameter against a specific type `T` use
 
 ```Cpp
 A<T>()
