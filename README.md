@@ -572,7 +572,21 @@ or
 An<T>()
 ```
 
-For instance, the `Ge` matcher can be used here as
+For more specific comparison matching use either
+
+| Eq(value) or value | argument == value |
+| Ge(value)          | argument >= value |
+| Gt(value)          | argument > value |
+| Le(value)          | argument <= value |
+| Lt(value)          | argument < value |
+| Ne(value)          | argument != value |
+| IsNull()           | argument is a NULL pointer (raw or smart) |
+| NotNull()          | argument is a non-null pointer (raw or smart) |
+| Ref(variable)      | argument is a reference to variable |
+| TypedEq<type>(value) | argument has type type and is equal to value. You may need to use this instead of Eq(value) when the mock function is overloaded.
+
+For instance,
+
 
 ```Cpp
 using ::testing::Ge;
