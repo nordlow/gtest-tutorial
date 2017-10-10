@@ -617,7 +617,7 @@ using ::testing::Ge;
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
 ```
 
-The other matchers are
+There are more matchers...:
 
 - [Floating-Pointer Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#floating-point-matchers)
 - [String Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#string-matchers)
