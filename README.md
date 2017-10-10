@@ -609,6 +609,7 @@ Other matchers are
 - [Adapters for Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#adapters-for-matchers)
 - [Matchers as Predicates](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers-as-predicates)
 - [Defining Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#defining-matchers)
+- [Matchers as Test Assertions](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers-as-test-assertions)
 
 ---
 ### Cardinality
