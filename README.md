@@ -512,7 +512,14 @@ ON_CALL(mock_object, method(matchers))
 ### Actions
 
 Actions specify what a mock function should do when invoked, that is it *defines
-behaviour*.
+behaviour*. Can be a
+
+- [Return of a value](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#returning-a-value)
+- [Side effect](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#side-effects)
+- [Using a Function or a Functor as an Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#using-a-function-or-a-functor-as-an-action)
+- [Default Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#default-action)
+- [Composite Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#composite-actions)
+- [Defining Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#defining-actions)
 
 ---
 ## Setting Expectations
