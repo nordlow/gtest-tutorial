@@ -548,7 +548,7 @@ EXPECT_CALL(turtle, GetX())
 ---
 ### Matchers
 
-If you don't care about exact parameter values use
+If you don't care about exact function parameter values use
 
 ```Cpp
 using ::testing::_;
@@ -574,18 +574,18 @@ An<T>()
 
 For more specific comparison matching use either
 
-| Expression         | Meaning           |
-| ------------------ |:-----------------:|
-| Eq(value) or value | argument == value |
-| Ge(value)          | argument >= value |
-| Gt(value)          | argument > value  |
-| Le(value)          | argument <= value |
-| Lt(value)          | argument < value  |
-| Ne(value)          | argument != value |
-| IsNull()           | argument is a NULL pointer (raw or smart) |
-| NotNull()          | argument is a non-null pointer (raw or smart) |
-| Ref(variable)      | argument is a reference to variable |
-| TypedEq<type>(value) | argument has type type and is equal to value. You may need to use this instead of Eq(value) when the mock function is overloaded.
+- `Eq(value)` or `value` : parameter == value
+- `Ge(value)` : parameter >= value
+- `Gt(value)` : parameter > value
+- `Le(value)` : parameter <= value
+- `Lt(value)` : parameter < value
+- `Ne(value)` : parameter != value
+- `IsNull()` : parameter is a `NULL` pointer (raw or smart)
+- `NotNull()` : parameter is a non-null pointer (raw or smart)
+- `Ref(variable)` : parameter is a reference to variable
+- `TypedEq<type>(value)` : parameter has type type and is equal to value. You
+  may need to use this instead of `Eq(value)` when the mock function is
+  overloaded
 
 For instance,
 
