@@ -9,7 +9,8 @@ Three lines of wisdom.
 First a short explanation of the terminology used in Google Test.
 
 Compared to other docs, this tutorial has colored code, more compact overviews,
-and merges three documents into one.
+and merges several documents (Google Test, Google Mock and Google Mock Cheat
+sheet) into one.
 
 ---
 # Test Double Terminology (according to [Uncle Bob](https://8thlight.com/blog/uncle-bob/))
