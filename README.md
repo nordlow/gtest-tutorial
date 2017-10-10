@@ -513,13 +513,13 @@ a mock method using a *declarative* domain-specific language. It's complete spec
 ```Cpp
 ...
 EXPECT_CALL(mock_object, method(matchers)) // separated by comma (limitations in C/C++-preprocessor)
-    .With(multi_argument_matcher)  ?
-    .Times(cardinality)            ?
-    .InSequence(sequences)         *
-    .After(expectations)           *
-    .WillOnce(action)              *
-    .WillRepeatedly(action)        ?
-    .RetiresOnSaturation();        ?
+    .With(multi_argument_matcher)  // ?
+    .Times(cardinality)            // ?
+    .InSequence(sequences)         // *
+    .After(expectations)           // *
+    .WillOnce(action)              // *
+    .WillRepeatedly(action)        // ?
+    .RetiresOnSaturation();        // ?
 ```
 
 enabling more compact specifications (and automatic error diagnostics) compared
