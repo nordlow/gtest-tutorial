@@ -548,6 +548,13 @@ EXPECT_CALL(turtle, GetX())
 ---
 ### Matchers
 
+A matcher matches a single argument. You can use it inside `ON_CALL()` or
+`EXPECT_CALL()`, or use it to validate a value directly using either
+
+- `EXPECT_THAT(value, matcher)`: asserts that value matches matcher
+- `ASSERT_THAT(value, matcher)`: the same as `EXPECT_THAT(value, matcher)`,
+  except that it generates a fatal failure
+
 If you don't care about exact function parameter values use
 
 ```Cpp
