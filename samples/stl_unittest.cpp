@@ -1,5 +1,6 @@
 #include <limits.h>
 #include <vector>
+
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
@@ -13,6 +14,7 @@ TEST(StdVectorTest, DiffersInTheBeginning) {
     const size_t n = 1000000;
 
     std::vector<int> x(n);
+
     std::vector<int> y(n);
     y[0] = 20;
     y[1] = 30;
@@ -25,6 +27,7 @@ TEST(StdVectorTest, DiffersInTheMiddle) {
     const size_t n = 1000000;
 
     std::vector<int> x(n);
+
     std::vector<int> y(n);
     y[n/2 + 0] = 20;
     y[n/2 + 1] = 30;
@@ -37,6 +40,7 @@ TEST(StdVectorTest, DiffersInTheEnd) {
     const size_t n = 1000000;
 
     std::vector<int> x(n);
+
     std::vector<int> y(n);
     y[n - 1] = 20;
 

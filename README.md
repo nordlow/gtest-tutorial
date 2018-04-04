@@ -8,6 +8,10 @@ Three lines of wisdom.
 
 First a short explanation of the terminology used in Google Test.
 
+Compared to other docs, this tutorial has colored code, more compact overviews,
+and merges several documents (Google Test, Google Mock and Google Mock Cheat
+sheet) into one.
+
 ---
 # Test Double Terminology (according to [Uncle Bob](https://8thlight.com/blog/uncle-bob/))
 
@@ -165,6 +169,7 @@ Pattern: `[ASSERT,EXPECT]_`
 - `[STREQ,STRNE,STRCASEEQ,STRCASENE]` for C-strings
 - `[FLOAT_EQ,DOUBLE_EQ](expected, actual)` floating pointer numbers (with implicit range)
 - `[NEAR](expected, actual, absolute_range)` floating pointer numbers (with explicit `absolute_range`)
+- `THAT(expression, m)`, generic matcher assertion: true if `expression` matcher matcher `m`
 
 Note that in order for diagnostics to be correct for `...EQ/NEQ`-functions the
 first parameter should be the expected value (in some cases constant) and the
@@ -413,9 +418,10 @@ class MockStack : public Stack<Elem> {
 
 1. Import
 2. Create mock objects
-3. Set expectations on behaviour
-4. Exercise code
-5. Upon destruction, expectations are checked
+3. Optionally, set default actions on mock objects (using `ON_CALL`)
+4. Set expectations on behaviour of mock objects (using `EXPECT_CALL`)
+5. Exercise code that use mock objects
+6. Upon destruction, Google Mock verifies that expectations have been satisfied
 
 For instance:
 
@@ -503,6 +509,19 @@ ON_CALL(mock_object, method(matchers))
 ```
 
 ---
+### Actions
+
+Actions specify what a mock function should do when invoked, that is it *defines
+behaviour*. Can be a
+
+- [Return of a value](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#returning-a-value)
+- [Side effect](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#side-effects)
+- [Using a Function or a Functor as an Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#using-a-function-or-a-functor-as-an-action)
+- [Default Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#default-action)
+- [Composite Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#composite-actions)
+- [Defining Action](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#defining-actions)
+
+---
 ## Setting Expectations
 
 Balance between setting too strict and too loose expectations.
@@ -543,7 +562,14 @@ EXPECT_CALL(turtle, GetX())
 ---
 ### Matchers
 
-If you don't care about exact parameter values use
+A matcher matches a single argument. You can use it inside `ON_CALL()` or
+`EXPECT_CALL()`, or use it to validate a value directly using either
+
+- `EXPECT_THAT(value, matcher)`: asserts that value matches matcher
+- `ASSERT_THAT(value, matcher)`: the same as `EXPECT_THAT(value, matcher)`,
+  except that it generates a fatal failure
+
+If you don't care about exact function parameter values use
 
 ```Cpp
 using ::testing::_;
@@ -555,13 +581,56 @@ The underscore `_` here is called a *matcher* (as in Erlang's pattern
 matching). [Here's](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers)
 a list of all the others.
 
-For instance, the `Ge` matcher can be used here as
+If you instead want to match a parameter against a specific type `T` use
+
+```Cpp
+A<T>()
+```
+
+or
+
+```Cpp
+An<T>()
+```
+
+For more specific comparison matching use either
+
+- `Eq(value)` or `value` : parameter == value
+- `Ge(value)` : parameter >= value
+- `Gt(value)` : parameter > value
+- `Le(value)` : parameter <= value
+- `Lt(value)` : parameter < value
+- `Ne(value)` : parameter != value
+- `IsNull()` : parameter is a `NULL` pointer (raw or smart)
+- `NotNull()` : parameter is a non-null pointer (raw or smart)
+- `Ref(variable)` : parameter is a reference to variable
+- `TypedEq<type>(value)` : parameter has type type and is equal to value. You
+  may need to use this instead of `Eq(value)` when the mock function is
+  overloaded
+
+For instance,
+
 
 ```Cpp
 using ::testing::Ge;
 ...
 EXPECT_CALL(turtle, Forward(Ge(100))); // turtle moved forward at least 100 steps
 ```
+
+There are more matchers...:
+
+- [Floating-Pointer Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#floating-point-matchers)
+- [String Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#string-matchers)
+- [STL-Container Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#string-matchers)
+- [Member-Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#member-matchers)
+- [Matching the Result of a Function or Functor](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matching-the-result-of-a-function-or-functor)
+- [Pointer Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#pointer-matchers)
+- [Multiargument Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#multiargument-matchers)
+- [Composite Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#composite-matchers)
+- [Adapters for Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#adapters-for-matchers)
+- [Matchers as Predicates](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers-as-predicates)
+- [Defining Matchers](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#defining-matchers)
+- [Matchers as Test Assertions](https://github.com/google/googletest/blob/master/googlemock/docs/CheatSheet.md#matchers-as-test-assertions)
 
 ---
 ### Cardinality
@@ -639,10 +708,10 @@ EXPECT_CALL(turtle, Forward(10))  // #2
     .Times(2);
 ```
 
-*Important fact*: Google Mock will search the expectations in the reverse order
-they are defined, and stop when an active expectation that matches the arguments
-is found (you can think of it as "newer rules override older ones.") Compare
-with C++ virtual member overrides.
+<!-- *Important fact*: Google Mock will search the expectations in the reverse order -->
+<!-- they are defined, and stop when an active expectation that matches the arguments -->
+<!-- is found (you can think of it as "newer rules override older ones.") Compare -->
+<!-- with C++ virtual member overrides. -->
 
 ---
 ## Ordered vs Unordered Calls
