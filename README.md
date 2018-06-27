@@ -171,9 +171,9 @@ Pattern: `[ASSERT,EXPECT]_`
 - `[NEAR](expected, actual, absolute_range)` floating pointer numbers (with explicit `absolute_range`)
 - `THAT(expression, m)`, generic matcher assertion: true if `expression` matcher matcher `m`
 
-Note that in order for diagnostics to be correct for `...EQ/NEQ`-functions the
-first parameter should be the expected value (in some cases constant) and the
-second should be the one calculated by function under test.
+**Important**: In order for diagnostics to be correct for `...EQ/NEQ`-functions
+the first parameter should be the expected value (in some cases constant) and
+the second should be the one calculated by function under test.
 
 Two kinds of behaviour on failures:
 
