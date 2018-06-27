@@ -389,8 +389,8 @@ public: // mocks must be public
 };
 ```
 
-- If you're lazy and optimistic you can use `scripts/generator/gmock_gen.py`.
 - Mocks should be defined in separate files, that is `MockTurtle` should be placed in `mock_turtle.h`.
+- If you're lazy and optimistic you can use `scripts/generator/gmock_gen.py`.
 - Note: Many other languages, both static and dynamic, can completely (and 100 %
   correctly) automate this stage.
 
