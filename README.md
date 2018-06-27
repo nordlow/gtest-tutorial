@@ -344,6 +344,10 @@ file](samples/CMakeLists.txt) for details.
 
 ---
 
+## Checking behaviour with Google Mock
+
+Now for some testing of behaviour with Google Mocke.
+
 ## Google Mock: Example Turtle Graphics
 
 ```Cpp
