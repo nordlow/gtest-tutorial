@@ -391,8 +391,6 @@ public: // mocks must be public
 
 - Mocks should be defined in separate files, that is `MockTurtle` should be placed in `mock_turtle.h`.
 - If you're lazy and optimistic you can use `scripts/generator/gmock_gen.py`.
-- Note: Many other languages, especially dynamic, can provides more automation
-  of this stage.
 
 To a mock class templates such as
 
@@ -416,6 +414,9 @@ class MockStack : public Stack<Elem> {
   MOCK_CONST_METHOD0_T(GetSize, int());
 };
 ```
+
+- Note: Many other languages, especially dynamic, can provides more automation
+  of this stage.
 
 ---
 ## Using Mocks
