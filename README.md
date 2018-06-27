@@ -364,7 +364,7 @@ class Turtle {
 };
 ```
 
-It's preferred but not required for methods to be virtual.
+**Important**: It's preferred but not required for methods to be virtual.
 
 ---
 ## Derive MockTurtle from Turtle
