@@ -350,7 +350,7 @@ Now for some testing of behaviour with Google Mock.
 
 ## Google Mock: Example Turtle Graphics
 
-Turtle-graphics API with pen-analogy.
+Graphics API with pen-analogy.
 
 ```Cpp
 class Turtle {
