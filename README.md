@@ -350,7 +350,12 @@ Now for some testing of behaviour with Google Mock.
 
 ## Google Mock: Example Turtle Graphics
 
-Pen-like Graphics API:
+Typical example: Pen-like Graphics API.
+
+States:
+
+- Pen-position as x and y coordinate.
+- Pen either actively drawing (down) or inactive (up).
 
 ```Cpp
 class Turtle {
