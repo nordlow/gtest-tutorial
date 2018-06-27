@@ -354,8 +354,13 @@ Typical example: Pen-like Graphics API.
 
 States:
 
-- Pen-position as x and y coordinate.
-- Pen either actively drawing (down) or inactive (up).
+- Pen-position as x and y coordinate
+- Pen either actively drawing (down) or inactive (up)
+
+Actions (Behaviour):
+
+- Change pen position
+- Make pen active or inactive
 
 ```Cpp
 class Turtle {
