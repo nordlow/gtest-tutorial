@@ -392,7 +392,7 @@ public: // mocks must be public
 - Mocks should be defined in separate files, that is `MockTurtle` should be placed in `mock_turtle.h`.
 - If you're lazy and optimistic you can use `scripts/generator/gmock_gen.py`.
 
-To a mock class templates such as
+To mock class templates such as
 
 ```Cpp
 template <typename Elem>
