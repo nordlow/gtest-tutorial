@@ -360,7 +360,8 @@ States:
 Actions (Behaviour):
 
 - Change pen position
-- Make pen active or inactive
+- Activate pen
+- Deactivate pen
 
 ```Cpp
 class Turtle {
