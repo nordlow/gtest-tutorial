@@ -415,8 +415,8 @@ class MockStack : public Stack<Elem> {
 };
 ```
 
-- Note: Many other languages, especially dynamic, can provides more automation
-  of this stage.
+- Note: Many other languages, especially dynamic, provide more automation of
+  this stage.
 
 ---
 ## Using Mocks
