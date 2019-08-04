@@ -810,16 +810,16 @@ TMP=`tempfile --suffix=.html` && pandoc -s -f markdown_github -o $TMP README.md 
 ```
 
 ---
-## Various
+## Install Google Test on Ubuntu 17.04
 
-- Install Google Test on Ubuntu 17.04 via the command
+The command
 
 ```Shell
 sudo apt install googletest
 ```
 
-only installs source under `/usr/src/googletest`. To install the libs build and
-install it with Googles own hack
+only installs the Google Test source under `/usr/src/googletest`. To install the
+libs you need to build and install them via Googles own hack
 
 ```Shell
 cd /usr/src/googletest/googletest
